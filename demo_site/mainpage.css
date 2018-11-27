@@ -1,0 +1,32 @@
+.workspace {
+    padding-top: 20px;
+    width: 1220px;
+    height: 80vh;
+    margin: 0 auto;
+}
+
+.kanbanzone{
+    display: inline-block;
+    height: 580px;
+    width: 300px;
+    background-color: rgb(1, 104, 155);
+}
+
+.kanbanzone h3 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.questionlist {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 280px;
+    height: 500px;
+    overflow-y: auto;
+}
+
+.question {
+    margin: 5px;
+}

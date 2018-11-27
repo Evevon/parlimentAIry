@@ -7,16 +7,43 @@
 </head>
 
 <body>
-    <div class="infoscreen">
+    <div class="tabbar" >
+        <button class="tablinks" 
+                onclick="tabToggle(event, 'currentQuestion')"
+                id="defaultOpen">
+                huidige vraag
+        </button>
+        
+        <button class="tablinks"
+                onclick="tabToggle(event, 'articles')">
+                artikelen
+        </button>
 
-        <p> 
-
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vestibulum vestibulum finibus. Phasellus volutpat ex lacinia pellentesque molestie. Proin hendrerit venenatis tellus, pulvinar porta nisl dapibus a. Integer auctor, libero id elementum tempor, leo mi consequat mi, at faucibus nibh tellus sed nisi. Donec lacinia eros nisl, sit amet iaculis nulla luctus vel. Duis porttitor id arcu luctus lobortis. Integer consequat molestie massa vitae porta. Ut dapibus felis ac ullamcorper elementum. Aenean a leo metus. Vivamus venenatis risus vitae ex maximus, sit amet iaculis urna placerat.
-                
-                Proin dapibus eget libero faucibus faucibus. Ut nunc dolor, aliquam ut mauris quis, tincidunt elementum nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas at magna nulla. Integer enim est, dictum id enim vitae, consectetur feugiat libero. Vivamus vel imperdiet tellus. Duis auctor purus enim, ut gravida ligula aliquet sed. In pulvinar imperdiet ante, a condimentum odio dignissim ut. Maecenas in augue pellentesque, vulputate tortor suscipit, ultrices velit. Fusce sodales elit eu neque tincidunt, et fringilla nunc sollicitudin.
-
-        </p>
+        <button class="tablinks"
+                onclick="tabToggle(event, 'oldQuestions')">
+                oude vragen
+        </button>
     </div>
+
+    <div class="infoscreen">
+        <div id="currentQuestion" class="tabcontent"> 
+                Huidige vraag document
+        </div>
+
+        <div id="articles" class ="tabcontent">
+                Artikel overzicht
+        </div>
+
+        <div id="oldQuestions" class="tabcontent">
+                Oude vraag overzicht
+        </div>
+    </div>
+
+    <script src="tabbar.js"></script>
+    <script>
+        document.getElementById("defaultOpen").click();
+    </script>
+
 </body>
 </html>
 

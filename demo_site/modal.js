@@ -1,7 +1,6 @@
 
-var modal = document.getElementById("test");
-
-console.log(modal);
+/* Change if more than one modal per page */
+var modal = document.getElementById("modal");
 
 function popup() {
     modal.style.display = "block";

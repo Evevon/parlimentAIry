@@ -5,23 +5,43 @@
 <link rel="StyleSheet" href="stylesheet.css" type="text/css" media="all" />
 </head>
 
-<body></body>
-
+<body id="workenvironment">
+    <!-- Banner at the top of the screen, containing logo and
+         maybe user profile link -->
     <div class="banner">
         <img src="logo.png"></img>    
-        
-        <div class="navbar">
-            <!-- Here come the navigation links to e.g. the user profile
-            <ul>
-                <li></li>
-            </ul>
-            -->
+    </div>
+
+    <!-- Work environment page content -->
+    <iframe src="we_content.html"></iframe>
+
+    <div class="options" id="we-options">
+        <button onclick="popup()">
+            klaar voor nu
+        </button>
+    </div>
+
+    <!-- Popup modal for exiting a question -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <p>U keert nu terug naar het scherm, wat is de status van deze vraag?</p>
+
+            <div class="options">
+                <button onclick="redirectHome()">
+                    in voortgang
+                </button>
+
+                <button onclick="redirectHome()">
+                    vereist verificatie
+                </button>
+
+                <button onclick="closePopup()">
+                    annuleer
+                </button>
+            </div>
         </div>
     </div>
-    <iframe src="we_content.html"></iframe>
-    <button onclick="redirectHome()">klaar voor nu</button>
 
-
-    <script src="pqAIsite.js"></script>
+    <script src="modal.js"></script>
 </body>
 </html>
