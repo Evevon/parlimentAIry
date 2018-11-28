@@ -38,6 +38,7 @@ iframe {
 .tabbar {
     background-color: rgb(1, 104, 155);
     padding-left: 30px;
+    min-width: 500px;
 }
 
 .tabcontent {

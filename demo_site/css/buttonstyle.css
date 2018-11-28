@@ -50,6 +50,7 @@ button:hover {
 
 .tabbar button.active {
     background-color: rgb(243, 243, 243);
+    cursor: default;
 }
 
 

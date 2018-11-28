@@ -1,12 +1,14 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="StyleSheet" href="stylesheet.css" type="text/css" media="all" />
+<!-- change stylesheet link to ../css/stylesheet.css if on mac or linux-->
+<link rel="StyleSheet" href="..\css\stylesheet.css"type="text/css" media="all" 
 </head>
 
 <body>
+    <!-- Tabbar contains the tabs that can be toggled to get to
+         the different info screens-->
     <div class="tabbar" >
         <button class="tablinks" 
                 onclick="tabToggle(event, 'currentQuestion')"
@@ -25,6 +27,7 @@
         </button>
     </div>
 
+    <!-- This infoscreen part will display the contents with information-->
     <div class="infoscreen">
         <div id="currentQuestion" class="tabcontent"> 
                 Huidige vraag document
@@ -39,11 +42,12 @@
         </div>
     </div>
 
-    <script src="tabbar.js"></script>
+    <!-- Functionality for the tabs, changes content when new tab is clicked
+         ../js/tabbar.js for mac/linux-->
+    <script src="..\js\tabbar.js"></script>
     <script>
         document.getElementById("defaultOpen").click();
     </script>
-
 </body>
 </html>
 

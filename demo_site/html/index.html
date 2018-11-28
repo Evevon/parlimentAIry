@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<!-- change stylesheet link to ../css/stylesheet.css if on mac or linux-->
+<link rel="StyleSheet" href="..\css\stylesheet.css"type="text/css" media="all" />
+</head>
+
+<body>
+    <div class="pagecontent">
+        <!-- Banner at the top of the screen, containing logo and
+            maybe user profile link -->
+        <div class="banner">
+            <!-- ../images/logo.png for mac/linux -->
+            <img src="..\images\logo.png"></img>    
+        </div>
+
+        <!-- Workspace contains the four kanban zones that contain the questions -->
+        <div class="workspace">
+
+            <div class="kanbanzone" id="todo">
+                <h3>te doen</h3>
+                <div class="questionlist">
+                    <!-- Mock Questions -->
+                    <ul>
+                        <li class="question">
+                            <button onclick="popup()">
+                                gevolgen van brexit
+                            </button>
+                        </li>
+
+                        <li class="question">
+                            <button onclick="popup()">
+                                budget voor aanleg weg
+                            </button>
+                        </li>
+
+                        <li class="question">
+                            <button onclick="popup()">
+                                milieu en nieuwbouw
+                            </button>
+                        </li>
+
+                        <li class="question">
+                            <button onclick="popup()">
+                                vragen over de stint
+                            </button>
+                        </li>
+
+                        <li class="question">
+                            <button onclick="popup()">
+                                vragen over scootmobiels
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="kanbanzone" id="inprogress">
+                <h3>in voortgang</h3>
+                <div class="questionlist">
+                    <!-- Mock Questions -->
+                    <ul>
+                        <li class="question">
+                            <button onclick="popup()">
+                                uitbreiding schiphol
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="kanbanzone" id="needverify">
+                    <h3>vereist verificatie</h3>
+                    <div class="questionlist">
+                    </div>
+            </div>
+
+            <div class="kanbanzone" id="done">
+                    <h3>goedgekeurd</h3>
+                    <div class="questionlist">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup modal for clicking a question -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            
+            <p>Weet u zeker dat u de vraag "[titel]" wilt beantwoorden?</p>
+            <p>Korte omschrijving van de vraag.</p>
+            
+            <div class="options">
+                <!-- Redirect to work environment when getting confirmation -->
+                <button onclick="redirectWorkEnvironment()">
+                    Beantwoord Vraag
+                </button>
+                
+                <!-- Cancel will close popup -->
+                <button onclick="closePopup()">
+                    Annuleer
+                </button>
+            </div>
+        </div>
+    </div>
+
+<!-- Javascript file that regulates the modal functionality
+    ../js/modal.js for mac/linux-->
+<script src="..\js\modal.js"></script>
+
+</body>
+</html>
