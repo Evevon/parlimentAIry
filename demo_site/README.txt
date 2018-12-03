@@ -1,4 +1,8 @@
-Hey guys, this is the DEMO website for end of december :)
+Hey guys, this is the DEMO website for end of december :) Website contains php code, so you will
+need a devserver in order to run the website. I use the one from https://www.easyphp.org/ .
+The devserver and thus the mysql database are local host, so you will need to recreate the 
+database tables in phpMyAdmin. The sql code to create it is in the misc folder, and follow this
+video: https://www.youtube.com/watch?v=9f_iSpieX6c&list=PL0eyrZgxdwhwBToawjm9faF1ixePexft-&index=30
 
 IMPORTANT:
 Relative paths are different in OSX and windows, this may cause problems. I coded this on 
@@ -8,9 +12,6 @@ slash /, look at the code for more details, comments are provided to guide you.
 
 TO DO:
 - information content of infoscreen (questions, article database)
-- mock database/backend with question name and description (also necessary for convincing
-content of info screen and useful implementation of drag/drop and list change of questions)
-- question will appear in specified list when exiting workspace through 'ready for now' button
 
 MAYBE Implement:
 - maybe use drag and drop functionality on home screen

@@ -1,4 +1,6 @@
-
+/* This file contains the style and layout for the
+ * work environment page elements
+ */
 #workenvironment {
     overflow-x: hidden;
 }
@@ -8,6 +10,7 @@ iframe {
     width: 100vw;
 }
 
+/* Text editor on the left of the screen */
 .texteditor {
     padding-left: 30px;
     padding-right: 30px;
@@ -18,6 +21,7 @@ iframe {
     margin-right: 50px;
 }
 
+/* Footer */
 #we-options {
     position: absolute;
     bottom: 0px;
@@ -29,6 +33,7 @@ iframe {
     padding-left: 40px;
 }
 
+/* Info screen on the right of the screen */
 .infoscreen {
     width: 100%;
     height: 700px;

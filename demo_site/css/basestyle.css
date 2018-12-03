@@ -1,16 +1,22 @@
-/* Basic layout style
+/* This file contains the basic layout style. This style is
+ * a bare necessity for every page on the website.
  */
- * {
+
+/* Root of the page, strip any margin and padding added by browser,
+   define variable for the banner height.*/
+* {
     margin: 0;
     padding: 0;
     --bannerheight: 100px;
 }
 
+/* Main background color and font of page content*/
 body {
     background-color: rgb(243, 243, 243);
     font-family: arial;
 }
 
+/* Banner at the top of the page*/
 .banner {
     height: var(--bannerheight);
     background-color: rgb(255, 255, 255);

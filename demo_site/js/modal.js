@@ -7,7 +7,24 @@ var pagecontent =  document.getElementsByClassName("pagecontent")[0];
 
 
 /* Have the modal pop up */
-function popup() {
+// At index page
+function indexPopup(id, name, description) {
+    var nameSpot = document.getElementById('questionName');
+    var descriptionSpot = document.getElementById('questionDescription');
+    var answerButton = document.getElementById('questionAnswer');
+
+    // Display corresponding question name and description in popup
+    nameSpot.innerHTML = name;
+    descriptionSpot.innerHTML = description;
+    answerButton.value= id;
+
+    modal.style.display = "block";
+    pagecontent.className += " de-emphasized";
+}
+
+// At work environment page 
+function wePopup()
+{
     modal.style.display = "block";
     pagecontent.className += " de-emphasized";
 }
@@ -28,16 +45,3 @@ window.onclick = function(event) {
         pagecontent.className = pagecontent.className.replace(" de-emphasized", "");
     }
 }
-
-
-/* Functions of other modal buttons*/
-// Link to work environment 
-function redirectWorkEnvironment() {
-    window.location.href = "workenvironment.html";
-}
-
-// Link to home page
-function redirectHome() {
-    window.location.href = "index.html"
-}
-

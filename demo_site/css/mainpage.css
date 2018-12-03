@@ -1,3 +1,5 @@
+/* This file contains the style and layout for the homepage elements*/
+
 .workspace {
     padding-top: 20px;
     width: 1220px;
@@ -10,6 +12,7 @@
     height: 580px;
     width: 300px;
     background-color: rgb(1, 104, 155);
+    overflow-x: hidden;
 }
 
 .kanbanzone h3 {
@@ -22,9 +25,19 @@
 .questionlist {
     margin-left: 10px;
     margin-right: 10px;
-    width: 280px;
+    padding-left: 15px;
+    padding-right: 7px;
+    width: 260px;
     height: 500px;
+    overflow-y: hidden;
+}
+
+.questionlist:hover {
     overflow-y: auto;
+}
+
+.questionlist ul {
+    list-style-type: none;
 }
 
 .question {

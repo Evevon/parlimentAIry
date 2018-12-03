@@ -1,3 +1,5 @@
+/* This file contains the style and layout for the popup modals*/
+
 .modal {
     display: none;
     position: fixed;
@@ -24,8 +26,13 @@
 
 .modal .options {
     padding-top: 50px;
+
 }
 
 .de-emphasized {
     filter: blur(5px);
+}
+
+form {
+    display:inline;
 }
