@@ -21,7 +21,7 @@
                 id="defaultOpen">
                 huidige vraag
         </button>
-        
+
         <button class="tablinks"
                 onclick="tabToggle(event, 'articles')">
                 artikelen

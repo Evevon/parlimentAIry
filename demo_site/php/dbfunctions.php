@@ -16,6 +16,7 @@ function getDBTable($tableName, $dbConn)
             $dataArray[] = $tableRow;
         }
     }
+
     return $dataArray;
 }
 
@@ -27,10 +28,12 @@ function convertTableRow($sqlRow)
     $dataArray = array();
     if (mysqli_num_rows($sqlRow) > 0)
     {
-        while ($tableRow = mysqli_fetch_assoc($sqlRow)) {
+        while ($tableRow = mysqli_fetch_assoc($sqlRow))
+        {
             $dataArray[] = $tableRow;
         }
     }
+
     return $dataArray;
 }
 
@@ -42,6 +45,7 @@ function getCurrentQuestion($questionID, $dbConn)
     $sql = "SELECT * FROM questions WHERE id='".$questionID."';";
     $question = mysqli_query($dbConn, $sql);
     $row = convertTableRow($question);
+
     return $row;
 }
 

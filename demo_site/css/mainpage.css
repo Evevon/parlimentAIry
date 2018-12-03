@@ -9,26 +9,26 @@
 
 .kanbanzone{
     display: inline-block;
+    background-color: rgb(1, 104, 155);
     height: 580px;
     width: 300px;
-    background-color: rgb(1, 104, 155);
     overflow-x: hidden;
 }
 
 .kanbanzone h3 {
+    color: rgb(255, 255, 255);
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
-    color: rgb(255, 255, 255);
 }
 
 .questionlist {
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-left: 15px;
-    padding-right: 7px;
     width: 260px;
     height: 500px;
+    padding-left: 15px;
+    padding-right: 7px;
+    margin-left: 10px;
+    margin-right: 10px;
     overflow-y: hidden;
 }
 

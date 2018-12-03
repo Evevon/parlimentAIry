@@ -20,4 +20,8 @@ else {
                            $_POST["btnNeedVerify"],
                            $conn);
 }
+
+/* After database update, redirect to homepage.
+ * change to "location: ../index.php if on linux/mac.
+ */
 header("location: ..\index.php ");

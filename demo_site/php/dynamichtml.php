@@ -25,6 +25,7 @@ function generateQuestions($dbConn, $status)
                     '</li>';
         }
     }
+
     return $html;
 }
 

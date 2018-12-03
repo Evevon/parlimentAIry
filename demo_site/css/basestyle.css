@@ -5,8 +5,8 @@
 /* Root of the page, strip any margin and padding added by browser,
    define variable for the banner height.*/
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     --bannerheight: 100px;
 }
 
@@ -18,13 +18,14 @@ body {
 
 /* Banner at the top of the page*/
 .banner {
-    height: var(--bannerheight);
     background-color: rgb(255, 255, 255);
-    min-width: 1220px;
     border-bottom: 1px solid rgb(200, 200, 200);
+    height: var(--bannerheight);
+    min-width: 1220px;
+
 }
 
 .banner img {
-    margin-left: 50px;
     height: calc(var(--bannerheight) - 20px);
+    margin-left: 50px;
 }

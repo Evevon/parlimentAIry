@@ -43,7 +43,6 @@
 
                     <!-- Pass values for parameters necessary to
                          update question -->
-
                     <input type="hidden"
                            name="questionID"
                            value="<?php echo $_POST['id'] ?>"/>

@@ -11,9 +11,9 @@
      become a more sophisticated text editor -->
 <body>
     <div class="texteditor">
-            <textarea id="answerfield" rows="40" cols="80"
-                      placeholder="Typ uw antwoord hier...">
-            </textarea>
+        <textarea id="answerfield" rows="40" cols="80"
+                  placeholder="Typ uw antwoord hier...">
+        </textarea>
     </div>
 </body>
 </html>

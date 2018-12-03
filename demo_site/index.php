@@ -91,8 +91,9 @@
                     Beantwoord Vraag
                 </button>
                 </form>
+
                 <!-- Cancel will close popup -->
-                    <button onclick="closePopup()">
+                <button onclick="closePopup()">
                     Annuleer
                 </button>
             </div>

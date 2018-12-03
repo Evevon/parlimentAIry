@@ -10,7 +10,7 @@
 </head>
 
 <frameset cols = "25%, 25%">
-    <!-- Pass value of question ID to the frames -->
+    <!-- Pass value of question ID to the frames through url-->
     <frame src="text_editor.php?questionid=<?php echo $_GET["questionid"]?>"/>
     <frame src="info_screen.php?questionid=<?php echo $_GET["questionid"]?>"/>
 </frameset>

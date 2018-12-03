@@ -8,7 +8,8 @@ var pagecontent =  document.getElementsByClassName("pagecontent")[0];
 
 /* Have the modal pop up */
 // At index page
-function indexPopup(id, name, description) {
+function indexPopup(id, name, description)
+{
     var nameSpot = document.getElementById('questionName');
     var descriptionSpot = document.getElementById('questionDescription');
     var answerButton = document.getElementById('questionAnswer');
@@ -32,16 +33,20 @@ function wePopup()
 
 /* Have the modal close */
 // By cancel button
-function closePopup() {
+function closePopup()
+{
     modal.style.display = "none";
-    pagecontent.className = pagecontent.className.replace(" de-emphasized", "");
+    pagecontent.className = pagecontent.className.replace(
+                                " de-emphasized", "");
 }
 
 // By clicking outside of the modal popup
-window.onclick = function(event) {
+window.onclick = function(event)
+{
     if (event.target == modal)
     {
         modal.style.display = "none";
-        pagecontent.className = pagecontent.className.replace(" de-emphasized", "");
+        pagecontent.className = pagecontent.className.replace(
+                                    " de-emphasized", "");
     }
 }
