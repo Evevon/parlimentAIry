@@ -19,7 +19,7 @@ https://docs.djangoproject.com/en/2.1/topics/install/#installing-official-releas
 
 ### Installing
 
-Having downloaded the GitHub repository, cd into the outer parlimentairy folder,
+Having downloaded the GitHub repository, cd into the 'website' folder,
 and run the following command to start up the server:
 ```
 python manage.py runserver
