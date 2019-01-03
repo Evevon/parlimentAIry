@@ -6,7 +6,8 @@
 <!-- change stylesheet link to css/stylesheet.css if on mac or linux-->
 <link rel="StyleSheet" href="css\stylesheet.css"type="text/css" media="all">
 
-<!-- The work environment content, containing both the text editor and info screen-->
+<!-- The work environment content, containing both the
+     text editor and info screen -->
 </head>
 
 <frameset cols = "25%, 25%">

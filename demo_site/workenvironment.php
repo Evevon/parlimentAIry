@@ -1,6 +1,6 @@
 <?php
+    require_once "php\dbconnect.php";
     include_once "php\dbfunctions.php";
-    include_once "php\dbconnect.php";
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +35,10 @@
     <!-- Popup modal for exiting a question -->
     <div class="modal" id="modal">
         <div class="modal-content">
-            <p>U keert nu terug naar het scherm, wat is de status van deze vraag?</p>
+            <p>
+                U keert nu terug naar het scherm,
+                wat is de status van deze vraag?
+            </p>
 
             <div class="options">
                 <form action="php\updatequestion.php"

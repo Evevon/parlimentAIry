@@ -1,5 +1,5 @@
 <?php
-include_once 'dbconnect.php';
+require_once 'dbconnect.php';
 
 /* getDBTable(str, connection) converts SQL table with name $tableName to php array.
  * Returns php 2 dimensional array.

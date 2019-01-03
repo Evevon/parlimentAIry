@@ -1,7 +1,7 @@
 <!-- Import php files: change to php/file.php when on mac/linux -->
 <?php
+    require_once "php\dbconnect.php";
     include_once "php\dynamichtml.php";
-    include_once "php\dbconnect.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<div class="pagecontent">
+    <div class="pagecontent">
         <!-- Banner at the top of the screen, containing logo and
             maybe user profile link -->
         <div class="banner">
@@ -25,7 +25,6 @@
         <!-- Workspace contains the four kanban zones that contain
              the questions -->
         <div class="workspace">
-
             <div class="kanbanzone" id="todo">
                 <h3>te doen</h3>
                 <div class="questionlist">
@@ -75,7 +74,6 @@
     <!-- Popup modal for clicking a question -->
     <div class="modal" id="modal">
         <div class="modal-content">
-            
             <p>
                 Weet u zeker dat u de vraag <span id="questionName"></span>
                 wilt beantwoorden?
@@ -100,10 +98,9 @@
         </div>
     </div>
 
-<!-- Javascript file that regulates the modal functionality
-     js/modal.js for mac/linux-->
-<script src="js\modal.js"></script>
-
+    <!-- Javascript file that regulates the modal functionality
+        js/modal.js for mac/linux-->
+    <script src="js\modal.js"></script>
 
 </body>
 </html>

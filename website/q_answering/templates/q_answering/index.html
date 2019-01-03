@@ -1,0 +1,148 @@
+<!-- -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title> Workspace </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'q_answering/style.css' %}">
+</head>
+
+<body>
+    <div class="pagecontent">
+        <!-- The website banner -->
+        <div class="banner">
+            <!-- Load in logo -->
+            <img src="{% static 'q_answering/logo.png' %}"/>
+
+            <!-- User menu is a hover dropdown, can contain profile settings
+                 and similar options later on if necessary -->
+            <nav class="dropdown" id="usermenu">
+                <button class="dropbtn">User Opties</button>
+                <div class ="dropdown-content">
+                    <a href="#">Link1</a>
+                    <a href="#">Link2</a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="workspace">
+            <div class="kanbanzone" id="todo">
+                <h3>te doen</h3>
+                <div class="questionlist">
+                    <!-- If there are questions with status 'to do', display
+                         each one of them. Else, display 'no questions
+                         available' message -->
+                    {% if todo_questions %}
+                    <ul>
+                        {% for question in todo_questions %}
+                            <li class="question">
+                                <button onclick="indexPopup('{{question.id}}',
+                                  '{{question.title}}', '{{question.description}}')">
+                                    <h5>{{ question.title }}</h5></button>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <p> Geen vragen met deze status </p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="kanbanzone" id="inprogress">
+                <h3>in voortgang</h3>
+                <div class="questionlist">
+                    {% if inprogress_questions %}
+                    <ul>
+                        {% for question in inprogress_questions %}
+                            <li class="question">
+                                <button onclick="indexPopup('{{question.id}}',
+                                  '{{question.title}}', '{{question.description}}')">
+                                  <h5>{{ question.title }}</h5></button>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <p> Geen vragen met deze status </p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="kanbanzone" id="needverify">
+                <h3>afgerond</h3>
+                <div class="questionlist">
+                    {% if needverify_questions %}
+                    <ul>
+                        {% for question in needverify_questions %}
+                            <li class="question">
+                                <button onclick="indexPopup('{{question.id}}',
+                                  '{{question.title}}', '{{question.description}}')">
+                                  <h5>{{ question.title }}</h5></button>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <p> Geen vragen met deze status </p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="kanbanzone" id="done">
+                <h3>goedgekeurd</h3>
+                <div class="questionlist">
+                    {% if approved_questions %}
+                    <ul>
+                        {% for question in approved_questions %}
+                            <li class="question">
+                                <button onclick="indexPopup('{{question.id}}',
+                                  '{{question.title}}', '{{question.description}}')">
+                                  <h5>{{ question.title }}</h5></button>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <p> Geen vragen met deze status </p>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Popup modal for clicking a question -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <p>
+                Weet u zeker dat u de vraag
+                "<i><span id="questionName"></span></i>" wilt beantwoorden?
+            </p>
+            <br>
+            <i><p id="questionDescription"></p></i>
+
+            <div class="options">
+                <!-- Redirect to work environment when getting confirmation -->
+                <form action="{% url 'questioneditwindow' %}"
+                      method="post">
+                      {% csrf_token %}
+                <button id="questionAnswer" name="id" type="submit" >
+                    Beantwoord Vraag
+                </button>
+                </form>
+
+                <!-- Cancel will close popup -->
+                <button onclick="closePopup()">
+                    Annuleer
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript file that regulates the modal functionality
+        js/modal.js for mac/linux-->
+    <script src="{% static 'q_answering/modal.js' %}"></script>
+
+</body>
+</html>

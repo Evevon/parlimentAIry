@@ -1,7 +1,7 @@
 <!-- Import php files: change to php/file.php when on mac/linux -->
 <?php
+    require_once "php\dbconnect.php";
     include_once "php\dbfunctions.php";
-    include_once "php\dbconnect.php";
 ?>
 
 <!DOCTYPE html>
