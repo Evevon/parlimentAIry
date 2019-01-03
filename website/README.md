@@ -35,7 +35,7 @@ http://127.0.0.1:8000/workspace/
 * [django](https://www.djangoproject.com/) - The web framework used
 
 ## Authors
-* **Majon Bongers**
+* **Mayon Bongers**
 * **Iulia Feroli**
 * **Victor Koppen**
 * **Evelyne van Oers**
