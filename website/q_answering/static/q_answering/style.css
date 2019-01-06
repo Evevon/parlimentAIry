@@ -172,6 +172,12 @@ button:hover {
     margin-bottom: 20px;
 }
 
+#examplePDF button {
+    border: 1px solid rgb(200,200,200);
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 20px;
+}
+
 
             /****************************************
              *                                      *
@@ -318,7 +324,7 @@ form {
     top: 0px;
     width: 645px;
     height: 94%;
-    border: 1px solid rgb(200,200,200);
+
 }
 
 .infodisplay{
@@ -329,9 +335,11 @@ form {
 .infocontent {
     width: 100%;
     height: 100%;
+    border: 1px solid rgb(200,200,200);
 }
 
 #examplePDFiframe {
     width: 100%;
     height: 100%;
+
 }
