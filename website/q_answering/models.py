@@ -4,17 +4,17 @@ from django.db import models
 class Question(models.Model):
     """
     A class representing parliamentary questions, their state and answer.
-
-    The Question class contains information about a parliamentary question.
-    It contains a title, displaying the question topic in max 40 characters,
-    a short description of max 200 characters, an answer of unknown length
-    that will be updated through the workspace, and a status that signifies
-    the progress made of answering the question.
     """
-    # A question title, will be displayed on the workspace screen
-    title = models.CharField(max_length=40)
-    # A question description, will pop up when question is clicked
+    # A question id, which corresponds to the ID's used by the ministry.
+    question_id = models.CharField(max_length=50)
+    # A boolean that keeps track of whether a question is answered or not.
+    answered = models.BooleanField(default=False)
+    upload_date = models.DateTimeField()
+    title = models.CharField(max_length=50)
+    # A question description, will pop up when question is clicked.
     description = models.CharField(max_length=200)
+    # A relative link to the question pdf document
+    question_document = models.CharField(max_length=200)
     # A question answer, will be updated as people save their answer
     # to the question after having worked on it in the workspace.
     answer = models.TextField(blank=True)
@@ -39,3 +39,69 @@ class Question(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Employee(models.Model):
+    """
+    Employee
+    """
+    is_admin = models.BooleanField(default=False)
+    user_name = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.user_name
+
+
+class Activity(models.Model):
+    """
+    Activity
+    """
+    # Employee who has executed the activity
+    executing_employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
+    # Question that is targeted with the activity
+    target_question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    date = models.DateTimeField()
+    # Type of activity: a move (a change of status) of the question, an
+    # alteration of the question answer, or an approval
+    MOVE = 'MV'
+    ALTERED = 'AL'
+    APPROVED = 'AP'
+    ACTIVITY_CHOICES = (
+        (MOVE, 'verplaatst'),
+        (ALTERED, 'geweizigd'),
+        (APPROVED, 'goedgekeurd'),
+    )
+    activity_type = models.CharField(
+        max_length=2,
+        choices=ACTIVITY_CHOICES,
+        default=ALTERED,
+    )
+
+    def __str__(self):
+        return "{} -> {}({})".format(self.executing_employee,
+                                self.activity_type, self.target_question)
+
+
+class Subquestion(models.Model):
+    """
+    Subquestion
+    """
+    parent_question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    content = models.TextField()
+
+    def __str__(self):
+        return self.content
+
+
+class Verification(models.Model):
+    """
+    Verification
+    """
+    executing_employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
+    target_question = models.ForeignKey(Question, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "{} -verified-> {}".format(self.executing_employee,
+                                    self.target_question)
