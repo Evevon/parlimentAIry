@@ -6,7 +6,7 @@ function tabToggle(event, tabName)
     var i, tabcontent, tablinks;
 
     // Hide all types of tab content
-    tabcontent = document.getElementsByClassName( "infocontent");
+    tabcontent = document.getElementsByClassName("infocontent");
     for (i = 0; i < tabcontent.length; i++)
     {
         tabcontent[i].style.display = "none";
