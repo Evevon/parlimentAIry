@@ -170,7 +170,7 @@ button:hover {
     height: 40px;
     color: white;
     font-size: 20px;
-    background-color: rgb(50,50,50);
+    background-color: rgb(25,25,25);
 }
 
 .closeactivitybtn:hover{
@@ -178,9 +178,9 @@ button:hover {
 }
 
 .hiddenpanel {
-    background-color: rgb(50,50,50);
+    background-color: rgba(0,0,0,0.9);
     height: 100vh;
-    width: 400px;
+    width: 500px;
     float: right;
     display: none;
 }
@@ -223,6 +223,25 @@ button:hover {
     margin-bottom: 20px;
 }
 
+#examplePDF i {
+    font-size: 20px;
+}
+
+.articlebtndiv {
+    text-align: right;
+}
+
+.articlebtndiv button {
+    color: white;
+    background-color: rgb(1, 104, 155);
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.articlebtndiv button:hover {
+    background-color: rgb(200,200,200);
+}
 
             /****************************************
              *                                      *
@@ -230,6 +249,35 @@ button:hover {
              *                                      *
              ****************************************/
 
+#questioninfo{
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+#questioninfo button {
+    font-size: 30px;
+    background-color: white;
+}
+
+#articleinfo {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+#articleinfo button {
+    font-size: 30px;
+    background-color: white;
+}
 
 .modal {
     display: none;
@@ -347,12 +395,17 @@ form {
 }
 
 .hiddenpanel li {
-    background-color: white;
+    color: white;
+    background-color:rgba(0,0,0,0.7);
     height: 100px;
-    width: 300px;
+    width: 420px;
+    padding-right: 20px;
     margin: 0 auto;
     margin-bottom: 20px;
     list-style-type: none;
+    -webkit-box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.55);
+    -moz-box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.55);
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.55);
 }
 
 .hiddenpanel p {
@@ -409,4 +462,57 @@ form {
     width: 100%;
     height: 100%;
 
+}
+
+.oldquestionlist {
+    list-style-type: none;
+}
+
+.oldquestionlist li {
+    background-color: white;
+    margin: 20px;
+    padding: 20px 20px  0px 20px;
+    -webkit-box-shadow: 0px 3px 3px 0px rgba(60,60,60,0.55);
+    -moz-box-shadow: 0px 3px 3px 0px rgba(60,60,60,0.55);
+    box-shadow: 0px 3px 3px 0px rgba(60,60,60,0.55);
+    border-top: 5px solid rgb(1, 104, 155);
+}
+
+.oldquestionbtndiv {
+    width: 100%;
+    text-align: right;
+}
+
+.oldquestionlist button {
+    color: white;
+    background-color: rgb(1, 104, 155);
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.oldquestionlist button:hover {
+    background-color: rgb(200,200,200);
+}
+
+.articlelist {
+    list-style-type: none;
+    margin: 20px;
+}
+
+.articlelist li {
+    margin-bottom: 10px;
+    padding: 20px 20px  0px 20px;
+    -webkit-box-shadow: 0px 3px 3px 0px rgba(60,60,60,0.55);
+    -moz-box-shadow: 0px 3px 3px 0px rgba(60,60,60,0.55);
+    box-shadow: 0px 3px 3px 0px rgba(60,60,60,0.55);
+    border-top: 5px solid rgb(1, 104, 155);
+}
+
+.NEW {
+    background-color: rgb(255, 200, 200);
+}
+
+.SCI {
+    background-color: rgb(200,200,255);
 }

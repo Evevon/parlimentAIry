@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Question
+from .models import Question, Subquestion, Article
 from django.urls import reverse
 
 def index(request):
@@ -29,7 +29,9 @@ def edit(request):
     # pass question ID as context
     context = {
         'question_id': q_id,
-        'subquestions': current_question.subquestion_set.all(),
+        'current_question': current_question,
+        'current_subquestions': current_question.subquestion_set.all(),
+        'articles': Article.objects.all(),
         'oldquestions': Question.objects.filter(answered=True),
     }
     return render(request, 'q_answering/questioneditwindow.html', context)
@@ -39,8 +41,9 @@ def updateQuestion(request):
     """ return a redirect to the index page after updating question status """
     # get the question that is currently active
     question = get_object_or_404(Question, pk=request.POST['id'])
-    # change the question status and save this to the database
+    # change the question status and answer and save this to the database
     question.status = request.POST['statusbtn']
+    question.answer = request.POST['answer']
     question.save()
 
     return HttpResponseRedirect(reverse('index'))

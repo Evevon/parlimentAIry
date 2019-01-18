@@ -41,6 +41,30 @@ class Question(models.Model):
         return self.title
 
 
+class Article(models.Model):
+    """
+    Article
+    """
+    title = models.CharField(max_length=50)
+    article_document = models.CharField(max_length=200)
+    SCIENTIFIC = 'SCI'
+    NEWS = 'NEW'
+    LAW = 'LAW'
+    TYPE_CHOICES = (
+        (SCIENTIFIC, 'onderzoek'),
+        (NEWS, 'nieuws'),
+        (LAW, 'wet'),
+    )
+    article_type = models.CharField(
+        max_length=3,
+        choices=TYPE_CHOICES,
+        default=NEWS,
+    )
+
+    def __str__(self):
+        return self.title
+
+
 class Employee(models.Model):
     """
     Employee

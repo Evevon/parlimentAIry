@@ -22,10 +22,11 @@
             <h4>Werkplek Activiteit</h4>
             <ul>
                 <li>
-                    <p>Test action 1</p>
+                    <p>Vraag "Uitbreiding Schiphol" is verplaatst van
+                        Te doen naar "In Voortgang" door jou.</p>
                 </li>
                 <li>
-                    <p>Test action 2</p>
+                    <p>Antwoord op "Uitbreiding Schiphol" is aangepast door Robin.</p>
                 </li>
             </ul>
         </div>
@@ -35,22 +36,9 @@
         <div class="banner">
             <!-- Load in logo -->
             <img src="{% static 'q_answering/logo.png' %}"/>
-
-            <!-- User menu is a hover dropdown, can contain profile settings
-                 and similar options later on if necessary -->
-            <nav class="dropdown" id="usermenu">
-                <button class="dropbtn">User Opties</button>
-                <div class ="dropdown-content">
-                    <a href="#">Link1</a>
-                    <a href="#">Link2</a>
-                </div>
-            </nav>
-
         </div>
 
-
         <div class="workspace">
-
 
             <div class="kanbanzone" id="todo">
                 <h3>te doen</h3>
@@ -64,7 +52,7 @@
                             <li class="question">
                                 <button onclick="indexPopup('{{question.id}}',
                                   '{{question.title}}', '{{question.description}}')">
-                                    <h5>{{ question.title }}</h5>{{question.upload_date.time}}</button>
+                                    <h5>{{ question.title }}</h5>{{question.upload_date.date}}</button>
                             </li>
                         {% endfor %}
                     </ul>
