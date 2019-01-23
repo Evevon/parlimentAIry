@@ -8,27 +8,40 @@
     <title> Workspace </title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'q_answering/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 
 <body>
+    {% if user.is_authenticated %}
+    <div class="boardmenu">
+        <button class="activitybtn" id="sidepanelbtn" onclick="panelToggleON()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="hiddenpanel" id="sidepanel">
+            <h4>Werkplek Activiteit</h4>
+            <ul>
+                <li>
+                    <p>Vraag "Uitbreiding Schiphol" is verplaatst van
+                        Te doen naar "In Voortgang" door jou.</p>
+                </li>
+                <li>
+                    <p>Antwoord op "Uitbreiding Schiphol" is aangepast door Robin.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
     <div class="pagecontent">
         <!-- The website banner -->
         <div class="banner">
             <!-- Load in logo -->
             <img src="{% static 'q_answering/logo.png' %}"/>
-
-            <!-- User menu is a hover dropdown, can contain profile settings
-                 and similar options later on if necessary -->
-            <nav class="dropdown" id="usermenu">
-                <button class="dropbtn">User Opties</button>
-                <div class ="dropdown-content">
-                    <a href="#">Link1</a>
-                    <a href="#">Link2</a>
-                </div>
-            </nav>
+            <a href="{% url 'logout' %}">log uit</a>
         </div>
 
         <div class="workspace">
+
             <div class="kanbanzone" id="todo">
                 <h3>te doen</h3>
                 <div class="questionlist">
@@ -39,9 +52,9 @@
                     <ul>
                         {% for question in todo_questions %}
                             <li class="question">
-                                <button onclick="indexPopup('{{question.id}}',
+                                <button class="questionbtn" onclick="indexPopup('{{question.id}}',
                                   '{{question.title}}', '{{question.description}}')">
-                                    <h5>{{ question.title }}</h5></button>
+                                    <h5>{{ question.title }}</h5>{{question.upload_date.date}}</button>
                             </li>
                         {% endfor %}
                     </ul>
@@ -58,9 +71,11 @@
                     <ul>
                         {% for question in inprogress_questions %}
                             <li class="question">
-                                <button onclick="indexPopup('{{question.id}}',
+                                <button class="questionbtn" onclick="indexPopup('{{question.id}}',
                                   '{{question.title}}', '{{question.description}}')">
-                                  <h5>{{ question.title }}</h5></button>
+                                  <h5>{{ question.title }}</h5>
+                                  {{question.upload_date.date}}
+                                </button>
                             </li>
                         {% endfor %}
                     </ul>
@@ -77,9 +92,28 @@
                     <ul>
                         {% for question in needverify_questions %}
                             <li class="question">
-                                <button onclick="indexPopup('{{question.id}}',
+                                <button class="questionbtn" onclick="indexPopup('{{question.id}}',
                                   '{{question.title}}', '{{question.description}}')">
-                                  <h5>{{ question.title }}</h5></button>
+                                    <h5>{{ question.title }}</h5>
+                                    {{question.upload_date.date}}
+                                    <span class="approvecount">
+                                        approved: {{question.verification_set.count}}/1
+                                    </span>
+                                </button>
+
+                                {% if user.employee.is_admin %}
+                                <form action="{% url 'approveQuestion' %}"
+                                  method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="employeeid" value="{{request.user.id}}">
+                                    <button class="approvalbtn"
+                                            name="questionid"
+                                            value="{{question.id}}"
+                                            type="submit">
+                                          approve
+                                    </button>
+                                </form>
+                                  {% endif %}
                             </li>
                         {% endfor %}
                     </ul>
@@ -96,9 +130,14 @@
                     <ul>
                         {% for question in approved_questions %}
                             <li class="question">
-                                <button onclick="indexPopup('{{question.id}}',
+                                <button class="questionbtn" onclick="indexPopup('{{question.id}}',
                                   '{{question.title}}', '{{question.description}}')">
-                                  <h5>{{ question.title }}</h5></button>
+                                    <h5>{{ question.title }}</h5>
+                                    {{question.upload_date.date}}
+                                    <span class="approvecount">
+                                        approved: {{question.verification_set.count}}/1
+                                    </span>
+                                </button>
                             </li>
                         {% endfor %}
                     </ul>
@@ -140,9 +179,12 @@
         </div>
     </div>
 
-    <!-- Javascript file that regulates the modal functionality
-        js/modal.js for mac/linux-->
+    <!-- Javascript file that regulates the modal functionality-->
     <script src="{% static 'q_answering/modal.js' %}"></script>
-
+    <script src="{% static 'q_answering/sidepanel.js' %}"></script>
+    {% else %}
+    U bent niet ingelogd!
+    <a href="{% url 'login' %}">log in</a>
+    {% endif %}
 </body>
 </html>

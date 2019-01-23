@@ -19,7 +19,7 @@ https://docs.djangoproject.com/en/2.1/topics/install/#installing-official-releas
 
 ### Installing
 
-Having downloaded the GitHub repository, cd into the 'website' folder,
+Having downloaded the GitHub repository, cd into the outer parlimentairy folder,
 and run the following command to start up the server:
 ```
 python manage.py runserver
@@ -35,7 +35,7 @@ http://127.0.0.1:8000/workspace/
 * [django](https://www.djangoproject.com/) - The web framework used
 
 ## Authors
-* **Mayon Bongers**
+* **Majon Bongers**
 * **Iulia Feroli**
 * **Victor Koppen**
 * **Evelyne van Oers**
