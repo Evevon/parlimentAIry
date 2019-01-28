@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Question, Subquestion, Article, Verification, Employee
+from .models import Question, Subquestion, Article, Verification, Employee, OldQuestion
 from django.urls import reverse
 
 def index(request):
@@ -31,8 +31,14 @@ def edit(request):
         'question_id': q_id,
         'current_question': current_question,
         'current_subquestions': current_question.subquestion_set.all(),
-        'articles': Article.objects.all(),
-        'oldquestions': Question.objects.filter(answered=True),
+        'articles': [Article.objects.get(pk=1),
+                     Article.objects.get(pk=5),
+                     Article.objects.get(pk=7),
+                     ],
+        'oldquestions': [OldQuestion.objects.get(pk=1),
+                         OldQuestion.objects.get(pk=5),
+                         OldQuestion.objects.get(pk=7),
+                         ],
     }
     return render(request, 'q_answering/questioneditwindow.html', context)
 

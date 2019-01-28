@@ -97,7 +97,7 @@
                                     <h5>{{ question.title }}</h5>
                                     {{question.upload_date.date}}
                                     <span class="approvecount">
-                                        approved: {{question.verification_set.count}}/1
+                                        goedgekeurd: {{question.verification_set.count}}/1
                                     </span>
                                 </button>
 
@@ -110,7 +110,7 @@
                                             name="questionid"
                                             value="{{question.id}}"
                                             type="submit">
-                                          approve
+                                          goedkeuren
                                     </button>
                                 </form>
                                   {% endif %}
@@ -135,7 +135,7 @@
                                     <h5>{{ question.title }}</h5>
                                     {{question.upload_date.date}}
                                     <span class="approvecount">
-                                        approved: {{question.verification_set.count}}/1
+                                        goedgekeurd: {{question.verification_set.count}}/1
                                     </span>
                                 </button>
                             </li>

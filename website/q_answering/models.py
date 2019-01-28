@@ -3,6 +3,17 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+
+class OldQuestion(models.Model):
+    question_id = models.CharField(max_length=50)
+    date = models.CharField(max_length=50)
+    filename = models.CharField(max_length=50)
+    text = models.TextField()
+
+    def __str__(self):
+        return self.question_id
+
+
 class Question(models.Model):
     """
     A class representing parliamentary questions, their state and answer.
@@ -47,21 +58,11 @@ class Article(models.Model):
     """
     Article
     """
-    title = models.CharField(max_length=50)
-    article_document = models.CharField(max_length=200)
-    SCIENTIFIC = 'SCI'
-    NEWS = 'NEW'
-    LAW = 'LAW'
-    TYPE_CHOICES = (
-        (SCIENTIFIC, 'onderzoek'),
-        (NEWS, 'nieuws'),
-        (LAW, 'wet'),
-    )
-    article_type = models.CharField(
-        max_length=3,
-        choices=TYPE_CHOICES,
-        default=NEWS,
-    )
+    article_id = models.CharField(max_length=50)
+    journal_code = models.CharField(max_length=200)
+    date = models.CharField(max_length=50)
+    title = models.CharField(max_length=200)
+    text = models.TextField()
 
     def __str__(self):
         return self.title

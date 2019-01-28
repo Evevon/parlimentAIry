@@ -149,8 +149,8 @@ button:hover {
 
 .boardmenu {
     position: fixed;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     z-index: 3;
 }
 
@@ -532,10 +532,12 @@ form {
     border-top: 5px solid rgb(1, 104, 155);
 }
 
-.NEW {
-    background-color: rgb(255, 200, 200);
+#articlecontent {
+  height: 80%;
+  overflow-y: scroll;
 }
 
-.SCI {
-    background-color: rgb(200,200,255);
+#infosubquestions {
+  height: 80%;
+  overflow-y: scroll;
 }

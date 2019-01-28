@@ -78,12 +78,11 @@
                         <ul class="articlelist">
 
                         {% for article in articles %}
-                            <li class="{{article.article_type}}">
-                                {{article.article_type}}
+                            <li>
                                 <h4>{{article}}</h4>
                                 <div class="articlebtndiv">
                                     <button onclick="showpanel('{{article}}',
-                                      'Hier komt de inhoud van het artikel',
+                                      '{{article.text}}',
                                       'articleinfo', 'articlename', 'articlecontent')">
                                         open
                                     </button>
@@ -100,7 +99,7 @@
 
                             <h3><span id="articlename"></span></h3>
                             <br>
-                            <span id="articlecontent"></span>
+                            <div id="articlecontent"></div>
                         </div>
                     </div>
 
@@ -112,7 +111,7 @@
                                 {{question.description}} <br>
                                 <div class="oldquestionbtndiv">
                                     <button onclick="showpanel('{{question}}',
-                                      '{{question.answer}}', 'questioninfo',
+                                      '{{question.text}}', 'questioninfo',
                                       'questioninfoname', 'infosubquestions')">
                                         open
                                     </button>
@@ -129,7 +128,7 @@
 
                             <h3><span id="questioninfoname"></span></h3>
                             <br>
-                            <span id="infosubquestions"></span>
+                            <div id="infosubquestions"></div>
                         </div>
                     </div>
 
